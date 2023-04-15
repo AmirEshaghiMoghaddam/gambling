@@ -155,6 +155,15 @@ function game() {
           const winnings = getWinnings(rows, bet, numberOfLines);
           balance += winnings;
           console.log("You won, $" + winnings.toString());
+
+          if (balance <= 0) {
+               console.log("You ran out of money!");
+               break;
+          }
+
+          const playAgain = prompt("Do you want to play again (y/n)? ");
+
+          if (playAgain != "y") break;
      }
 }
 
